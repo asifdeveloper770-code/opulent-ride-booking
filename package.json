@@ -1,0 +1,10 @@
+{
+  "name": "opulent-ride-booking",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "bun --cwd frontend run dev",
+    "build:frontend": "bun --cwd frontend run build",
+    "lint:frontend": "bun --cwd frontend run lint",
+    "build:backend": "bun --cwd backend run build"
+  }
+}
