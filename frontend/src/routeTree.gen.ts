@@ -10,15 +10,45 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SiteRouteImport } from './routes/_site'
+import { Route as DashboardRouteImport } from './routes/_dashboard'
+import { Route as AuthRouteImport } from './routes/_auth'
+import { Route as AdminRouteImport } from './routes/_admin'
 import { Route as SiteIndexRouteImport } from './routes/_site.index'
 import { Route as SiteServicesRouteImport } from './routes/_site.services'
 import { Route as SiteFleetRouteImport } from './routes/_site.fleet'
 import { Route as SiteContactRouteImport } from './routes/_site.contact'
 import { Route as SiteBookingRouteImport } from './routes/_site.booking'
 import { Route as SiteAboutRouteImport } from './routes/_site.about'
+import { Route as DashboardSettingsRouteImport } from './routes/_dashboard.settings'
+import { Route as DashboardProfileRouteImport } from './routes/_dashboard.profile'
+import { Route as DashboardDashboardRouteImport } from './routes/_dashboard.dashboard'
+import { Route as DashboardBookingsRouteImport } from './routes/_dashboard.bookings'
+import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
+import { Route as AuthLoginRouteImport } from './routes/_auth.login'
+import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
+import { Route as AdminAdminRouteImport } from './routes/_admin.admin'
+import { Route as AdminAdminUsersRouteImport } from './routes/_admin.admin.users'
+import { Route as AdminAdminTestimonialsRouteImport } from './routes/_admin.admin.testimonials'
+import { Route as AdminAdminSettingsRouteImport } from './routes/_admin.admin.settings'
+import { Route as AdminAdminServicesRouteImport } from './routes/_admin.admin.services'
+import { Route as AdminAdminMessagesRouteImport } from './routes/_admin.admin.messages'
+import { Route as AdminAdminFleetRouteImport } from './routes/_admin.admin.fleet'
+import { Route as AdminAdminBookingsRouteImport } from './routes/_admin.admin.bookings'
 
 const SiteRoute = SiteRouteImport.update({
   id: '/_site',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/_dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/_auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/_admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SiteIndexRoute = SiteIndexRouteImport.update({
@@ -51,50 +81,236 @@ const SiteAboutRoute = SiteAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => SiteRoute,
 } as any)
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardProfileRoute = DashboardProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDashboardRoute = DashboardDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardBookingsRoute = DashboardBookingsRouteImport.update({
+  id: '/bookings',
+  path: '/bookings',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const AuthRegisterRoute = AuthRegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AdminAdminRoute = AdminAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAdminUsersRoute = AdminAdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminTestimonialsRoute = AdminAdminTestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminSettingsRoute = AdminAdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminServicesRoute = AdminAdminServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminMessagesRoute = AdminAdminMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminFleetRoute = AdminAdminFleetRouteImport.update({
+  id: '/fleet',
+  path: '/fleet',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
+const AdminAdminBookingsRoute = AdminAdminBookingsRouteImport.update({
+  id: '/bookings',
+  path: '/bookings',
+  getParentRoute: () => AdminAdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
+  '/admin': typeof AdminAdminRouteWithChildren
+  '/forgot-password': typeof AuthForgotPasswordRoute
+  '/login': typeof AuthLoginRoute
+  '/register': typeof AuthRegisterRoute
+  '/bookings': typeof DashboardBookingsRoute
+  '/dashboard': typeof DashboardDashboardRoute
+  '/profile': typeof DashboardProfileRoute
+  '/settings': typeof DashboardSettingsRoute
   '/about': typeof SiteAboutRoute
   '/booking': typeof SiteBookingRoute
   '/contact': typeof SiteContactRoute
   '/fleet': typeof SiteFleetRoute
   '/services': typeof SiteServicesRoute
+  '/admin/bookings': typeof AdminAdminBookingsRoute
+  '/admin/fleet': typeof AdminAdminFleetRoute
+  '/admin/messages': typeof AdminAdminMessagesRoute
+  '/admin/services': typeof AdminAdminServicesRoute
+  '/admin/settings': typeof AdminAdminSettingsRoute
+  '/admin/testimonials': typeof AdminAdminTestimonialsRoute
+  '/admin/users': typeof AdminAdminUsersRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof SiteIndexRoute
+  '/admin': typeof AdminAdminRouteWithChildren
+  '/forgot-password': typeof AuthForgotPasswordRoute
+  '/login': typeof AuthLoginRoute
+  '/register': typeof AuthRegisterRoute
+  '/bookings': typeof DashboardBookingsRoute
+  '/dashboard': typeof DashboardDashboardRoute
+  '/profile': typeof DashboardProfileRoute
+  '/settings': typeof DashboardSettingsRoute
   '/about': typeof SiteAboutRoute
   '/booking': typeof SiteBookingRoute
   '/contact': typeof SiteContactRoute
   '/fleet': typeof SiteFleetRoute
   '/services': typeof SiteServicesRoute
-  '/': typeof SiteIndexRoute
+  '/admin/bookings': typeof AdminAdminBookingsRoute
+  '/admin/fleet': typeof AdminAdminFleetRoute
+  '/admin/messages': typeof AdminAdminMessagesRoute
+  '/admin/services': typeof AdminAdminServicesRoute
+  '/admin/settings': typeof AdminAdminSettingsRoute
+  '/admin/testimonials': typeof AdminAdminTestimonialsRoute
+  '/admin/users': typeof AdminAdminUsersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/_admin': typeof AdminRouteWithChildren
+  '/_auth': typeof AuthRouteWithChildren
+  '/_dashboard': typeof DashboardRouteWithChildren
   '/_site': typeof SiteRouteWithChildren
+  '/_admin/admin': typeof AdminAdminRouteWithChildren
+  '/_auth/forgot-password': typeof AuthForgotPasswordRoute
+  '/_auth/login': typeof AuthLoginRoute
+  '/_auth/register': typeof AuthRegisterRoute
+  '/_dashboard/bookings': typeof DashboardBookingsRoute
+  '/_dashboard/dashboard': typeof DashboardDashboardRoute
+  '/_dashboard/profile': typeof DashboardProfileRoute
+  '/_dashboard/settings': typeof DashboardSettingsRoute
   '/_site/about': typeof SiteAboutRoute
   '/_site/booking': typeof SiteBookingRoute
   '/_site/contact': typeof SiteContactRoute
   '/_site/fleet': typeof SiteFleetRoute
   '/_site/services': typeof SiteServicesRoute
   '/_site/': typeof SiteIndexRoute
+  '/_admin/admin/bookings': typeof AdminAdminBookingsRoute
+  '/_admin/admin/fleet': typeof AdminAdminFleetRoute
+  '/_admin/admin/messages': typeof AdminAdminMessagesRoute
+  '/_admin/admin/services': typeof AdminAdminServicesRoute
+  '/_admin/admin/settings': typeof AdminAdminSettingsRoute
+  '/_admin/admin/testimonials': typeof AdminAdminTestimonialsRoute
+  '/_admin/admin/users': typeof AdminAdminUsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/booking' | '/contact' | '/fleet' | '/services'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/bookings'
+    | '/dashboard'
+    | '/profile'
+    | '/settings'
+    | '/about'
+    | '/booking'
+    | '/contact'
+    | '/fleet'
+    | '/services'
+    | '/admin/bookings'
+    | '/admin/fleet'
+    | '/admin/messages'
+    | '/admin/services'
+    | '/admin/settings'
+    | '/admin/testimonials'
+    | '/admin/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/booking' | '/contact' | '/fleet' | '/services' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/bookings'
+    | '/dashboard'
+    | '/profile'
+    | '/settings'
+    | '/about'
+    | '/booking'
+    | '/contact'
+    | '/fleet'
+    | '/services'
+    | '/admin/bookings'
+    | '/admin/fleet'
+    | '/admin/messages'
+    | '/admin/services'
+    | '/admin/settings'
+    | '/admin/testimonials'
+    | '/admin/users'
   id:
     | '__root__'
+    | '/_admin'
+    | '/_auth'
+    | '/_dashboard'
     | '/_site'
+    | '/_admin/admin'
+    | '/_auth/forgot-password'
+    | '/_auth/login'
+    | '/_auth/register'
+    | '/_dashboard/bookings'
+    | '/_dashboard/dashboard'
+    | '/_dashboard/profile'
+    | '/_dashboard/settings'
     | '/_site/about'
     | '/_site/booking'
     | '/_site/contact'
     | '/_site/fleet'
     | '/_site/services'
     | '/_site/'
+    | '/_admin/admin/bookings'
+    | '/_admin/admin/fleet'
+    | '/_admin/admin/messages'
+    | '/_admin/admin/services'
+    | '/_admin/admin/settings'
+    | '/_admin/admin/testimonials'
+    | '/_admin/admin/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  AdminRoute: typeof AdminRouteWithChildren
+  AuthRoute: typeof AuthRouteWithChildren
+  DashboardRoute: typeof DashboardRouteWithChildren
   SiteRoute: typeof SiteRouteWithChildren
 }
 
@@ -105,6 +321,27 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof SiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_dashboard': {
+      id: '/_dashboard'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_admin': {
+      id: '/_admin'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_site/': {
@@ -149,8 +386,179 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteAboutRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_dashboard/settings': {
+      id: '/_dashboard/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/profile': {
+      id: '/_dashboard/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof DashboardProfileRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard': {
+      id: '/_dashboard/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardDashboardRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/bookings': {
+      id: '/_dashboard/bookings'
+      path: '/bookings'
+      fullPath: '/bookings'
+      preLoaderRoute: typeof DashboardBookingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_auth/register': {
+      id: '/_auth/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/login': {
+      id: '/_auth/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/forgot-password': {
+      id: '/_auth/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof AuthForgotPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_admin/admin': {
+      id: '/_admin/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminAdminRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/_admin/admin/users': {
+      id: '/_admin/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminAdminUsersRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/testimonials': {
+      id: '/_admin/admin/testimonials'
+      path: '/testimonials'
+      fullPath: '/admin/testimonials'
+      preLoaderRoute: typeof AdminAdminTestimonialsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/settings': {
+      id: '/_admin/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminAdminSettingsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/services': {
+      id: '/_admin/admin/services'
+      path: '/services'
+      fullPath: '/admin/services'
+      preLoaderRoute: typeof AdminAdminServicesRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/messages': {
+      id: '/_admin/admin/messages'
+      path: '/messages'
+      fullPath: '/admin/messages'
+      preLoaderRoute: typeof AdminAdminMessagesRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/fleet': {
+      id: '/_admin/admin/fleet'
+      path: '/fleet'
+      fullPath: '/admin/fleet'
+      preLoaderRoute: typeof AdminAdminFleetRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
+    '/_admin/admin/bookings': {
+      id: '/_admin/admin/bookings'
+      path: '/bookings'
+      fullPath: '/admin/bookings'
+      preLoaderRoute: typeof AdminAdminBookingsRouteImport
+      parentRoute: typeof AdminAdminRoute
+    }
   }
 }
+
+interface AdminAdminRouteChildren {
+  AdminAdminBookingsRoute: typeof AdminAdminBookingsRoute
+  AdminAdminFleetRoute: typeof AdminAdminFleetRoute
+  AdminAdminMessagesRoute: typeof AdminAdminMessagesRoute
+  AdminAdminServicesRoute: typeof AdminAdminServicesRoute
+  AdminAdminSettingsRoute: typeof AdminAdminSettingsRoute
+  AdminAdminTestimonialsRoute: typeof AdminAdminTestimonialsRoute
+  AdminAdminUsersRoute: typeof AdminAdminUsersRoute
+}
+
+const AdminAdminRouteChildren: AdminAdminRouteChildren = {
+  AdminAdminBookingsRoute: AdminAdminBookingsRoute,
+  AdminAdminFleetRoute: AdminAdminFleetRoute,
+  AdminAdminMessagesRoute: AdminAdminMessagesRoute,
+  AdminAdminServicesRoute: AdminAdminServicesRoute,
+  AdminAdminSettingsRoute: AdminAdminSettingsRoute,
+  AdminAdminTestimonialsRoute: AdminAdminTestimonialsRoute,
+  AdminAdminUsersRoute: AdminAdminUsersRoute,
+}
+
+const AdminAdminRouteWithChildren = AdminAdminRoute._addFileChildren(
+  AdminAdminRouteChildren,
+)
+
+interface AdminRouteChildren {
+  AdminAdminRoute: typeof AdminAdminRouteWithChildren
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAdminRoute: AdminAdminRouteWithChildren,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
+interface AuthRouteChildren {
+  AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthRegisterRoute: typeof AuthRegisterRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthForgotPasswordRoute: AuthForgotPasswordRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthRegisterRoute: AuthRegisterRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
+interface DashboardRouteChildren {
+  DashboardBookingsRoute: typeof DashboardBookingsRoute
+  DashboardDashboardRoute: typeof DashboardDashboardRoute
+  DashboardProfileRoute: typeof DashboardProfileRoute
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardBookingsRoute: DashboardBookingsRoute,
+  DashboardDashboardRoute: DashboardDashboardRoute,
+  DashboardProfileRoute: DashboardProfileRoute,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
 
 interface SiteRouteChildren {
   SiteAboutRoute: typeof SiteAboutRoute
@@ -173,6 +581,9 @@ const SiteRouteChildren: SiteRouteChildren = {
 const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
+  AdminRoute: AdminRouteWithChildren,
+  AuthRoute: AuthRouteWithChildren,
+  DashboardRoute: DashboardRouteWithChildren,
   SiteRoute: SiteRouteWithChildren,
 }
 export const routeTree = rootRouteImport

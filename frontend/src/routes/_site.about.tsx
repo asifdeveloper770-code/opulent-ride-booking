@@ -71,7 +71,7 @@ function About() {
           <p className="mt-6 text-2xl md:text-3xl font-display italic leading-snug">
             "Excellence is not an act — it is a habit. Every door we open is an opportunity to exceed your expectations."
           </p>
-          <p className="mt-6 font-script text-gold text-2xl">— The SAY Limousine Team</p>
+          <p className="mt-6 font-script text-gold text-2xl">— The Say Limousine Team</p>
         </div>
       </section>
     </>

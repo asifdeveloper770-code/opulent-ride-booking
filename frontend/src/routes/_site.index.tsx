@@ -25,8 +25,8 @@ const services = [
 ];
 
 const fleet = [
-  // { img: sedan, name: "Luxury Sedan", pax: "1–3 Passengers", model: "Mercedes-Benz S-Class" },
   { img: suv, name: "Executive SUV", pax: "1–6 Passengers", model: "Cadillac GMC Yukon XL" },
+  { img: sedan, name: "Luxury Sedan", pax: "1–3 Passengers", model: "Mercedes-Benz S-Class" },
   { img: stretch, name: "Stretch Limousine", pax: "1–10 Passengers", model: "Chrysler 300 Stretch" },
   { img: sprinter, name: "Luxury Sprinter", pax: "1–14 Passengers", model: "Mercedes Sprinter" },
 ];
@@ -156,7 +156,7 @@ function Home() {
               View All Vehicles <ArrowRight className="size-4" />
             </Link>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {fleet.map((v) => (
               <div key={v.name} className="group relative overflow-hidden border border-border bg-background">
                 <div className="aspect-[4/3] overflow-hidden">

@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Calendar, Clock, MapPin, Users, Car, User, Mail, Phone, MessageSquare } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { apiPost } from "@/lib/api";
 
 const schema = z.object({
   serviceType: z.string().min(1, "Required"),
@@ -46,9 +46,20 @@ type BookingFormProps = {
 };
 
 const initial = {
-  serviceType: "", vehicleType: "", pickupLocation: "", dropoffLocation: "",
-  pickupDate: "", pickupTime: "", passengers: "1", luggage: "0",
-  firstName: "", lastName: "", email: "", phone: "", flightNumber: "", specialRequests: "",
+  serviceType: "",
+  vehicleType: "",
+  pickupLocation: "",
+  dropoffLocation: "",
+  pickupDate: "",
+  pickupTime: "",
+  passengers: "1",
+  luggage: "0",
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  flightNumber: "",
+  specialRequests: "",
 };
 
 function BookingField({
@@ -69,7 +80,11 @@ function BookingField({
       {options ? (
         <select className={inputClassName} value={value} onChange={(e) => onChange(name, e.target.value)}>
           <option value="">Select...</option>
-          {options.map((option) => <option key={option} value={option}>{option}</option>)}
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
       ) : (
         <input
@@ -117,40 +132,10 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
       if (onSubmit) {
         await onSubmit(res.data);
       } else {
-        const { error } = await supabase
-          .from("bookings")
-          .insert([
-            {
-              service_type: res.data.serviceType,
-              vehicle_type: res.data.vehicleType,
-
-              pickup_location: res.data.pickupLocation,
-              dropoff_location: res.data.dropoffLocation,
-
-              pickup_date: res.data.pickupDate,
-              pickup_time: String(res.data.pickupTime),
-
-              passengers: Number(res.data.passengers),
-              luggage: Number(res.data.luggage),
-
-              first_name: res.data.firstName,
-              last_name: res.data.lastName,
-
-              email: res.data.email,
-              phone: res.data.phone,
-
-              flight_number: res.data.flightNumber,
-              special_requests: res.data.specialRequests,
-            },
-          ]);
-
-        if (error) {
-          console.log(error);
-          throw error;
-        }
+        await apiPost("/api/bookings", res.data);
       }
 
-      toast.success(successMessage ?? "Reservation request received â€” our concierge will confirm shortly.");
+      toast.success(successMessage ?? "Reservation request received — our concierge will confirm shortly.");
       if (!initialValues) {
         setData(initial);
       }
@@ -335,7 +320,7 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
         <span className="absolute inset-0 shimmer opacity-60" />
       </button>
       <p className="mt-4 text-center text-xs text-muted-foreground">
-        Instant confirmation â€¢ 24/7 concierge â€¢ Free cancellation up to 12h
+        Instant confirmation • 24/7 concierge • Free cancellation up to 12h
       </p>
     </form>
   );

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Music2, Twitter } from "lucide-react";
 import logo from "@/assets/say-limo-logo.jpeg";
 
 export function Footer() {
@@ -18,8 +18,31 @@ export function Footer() {
             Premier luxury chauffeur and limousine services. Discretion, punctuality, and elegance — delivered every ride.
           </p>
           <div className="mt-6 flex gap-3">
-            {[Facebook, Instagram, Twitter].map((Icon, i) => (
-              <a key={i} href="#" className="size-9 grid place-items-center border border-border hover:border-gold hover:text-gold transition-colors">
+            {[
+              {
+                icon: Facebook,
+                link: "https://www.facebook.com/share/196EdvpjYX/?mibextid=wwXIfr",
+              },
+              {
+                icon: Instagram,
+                link: "https://www.instagram.com/saylimousine?igsh=MWZqd3BvbTYzd3Rncw%3D%3D&utm_source=qr",
+              },
+              {
+                icon: Twitter,
+                link: "https://x.com/saylimousine?s=11",
+              },
+              {
+                icon: Music2,
+                link: "https://www.tiktok.com/@saylimousine?_r=1&_t=ZS-96uHrkybrm5",
+              },
+            ].map(({ icon: Icon, link }, i) => (
+              <a
+                key={i}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="size-9 grid place-items-center border border-border hover:border-gold hover:text-gold transition-colors"
+              >
                 <Icon className="size-4" />
               </a>
             ))}
@@ -45,7 +68,7 @@ export function Footer() {
         <div>
           <h4 className="text-sm uppercase tracking-[0.25em] text-gold mb-5">Services</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            {["Airport Transfers","Corporate Travel","Weddings","Proms & Events","Night Out","Hourly Charter"].map(s => (
+            {["Airport Transfers", "Corporate Travel", "Weddings", "Proms & Events", "Night Out", "Hourly Charter"].map(s => (
               <li key={s} className="hover:text-gold transition-colors cursor-default">{s}</li>
             ))}
           </ul>
@@ -56,7 +79,7 @@ export function Footer() {
           <ul className="space-y-4 text-sm text-muted-foreground">
             <li className="flex gap-3"><Phone className="size-4 text-gold mt-0.5" /> +1 (555) 123-4567</li>
             <li className="flex gap-3"><Mail className="size-4 text-gold mt-0.5" /> bookings@saylimousine.com</li>
-            <li className="flex gap-3"><MapPin className="size-4 text-gold mt-0.5" /> 1240 Madison Ave, New York, NY</li>
+            {/* <li className="flex gap-3"><MapPin className="size-4 text-gold mt-0.5" /> 1240 Madison Ave, New York, NY</li> */}
           </ul>
         </div>
       </div>
