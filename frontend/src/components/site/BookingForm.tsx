@@ -335,13 +335,13 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
         <span className="absolute inset-0 shimmer opacity-60" />
       </button>
       <button
-        type="submit"
         className="mt-8 group relative w-full overflow-hidden bg-[#25D366] hover:bg-[#1ebe5d] text-white py-4 text-xs uppercase tracking-[0.3em] font-medium transition-all duration-300 shadow-lg hover:shadow-green-500/30"
 
       >
         <a href="https://wa.me/713-408-5577" target="_blank">
           Chat on WhatsApp
-        </a>        <span className="absolute inset-0 shimmer opacity-60" />
+        </a>      
+          <span className="absolute inset-0 shimmer opacity-60" />
       </button>
       <p className="mt-4 text-center text-xs text-muted-foreground">
         Instant confirmation • 24/7 concierge • Free cancellation up to 12h
