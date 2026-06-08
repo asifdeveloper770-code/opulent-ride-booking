@@ -62,6 +62,16 @@ const initial = {
   specialRequests: "",
 };
 
+const handleWhatsApp = () => {
+  const phoneNumber = "7134085577";
+
+  const message = encodeURIComponent(
+    `Hello, I want to book a chauffeur.\n\nName: ${form.name}\nDate: ${form.date}\nTime: ${form.time}`
+  );
+
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+};
+
 function BookingField({
   name,
   value,
@@ -135,7 +145,7 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
         await apiPost("/api/bookings", res.data);
       }
 
-      toast.success(successMessage ?? "Reservation request received — our concierge will confirm shortly.");
+      toast.success(successMessage ?? "Reservation request received ï¿½ our concierge will confirm shortly.");
       if (!initialValues) {
         setData(initial);
       }
@@ -319,8 +329,26 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
         <span className="relative z-10">{isSubmitting ? "Sending..." : (submitLabel ?? "Reserve My Chauffeur")}</span>
         <span className="absolute inset-0 shimmer opacity-60" />
       </button>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="mt-8 group relative w-full overflow-hidden bg-gold text-primary-foreground py-4 text-xs uppercase tracking-[0.3em] font-medium hover:bg-gold-light transition-colors"
+      >
+        <span className="relative z-10">{isSubmitting ? "Sending..." : (submitLabel ?? "Reserve My Chauffeur")}</span>
+        <span className="absolute inset-0 shimmer opacity-60" />
+      </button>
+      <button
+        type="button"
+        onClick={handleWhatsApp}
+        className="mt-8 group relative w-full overflow-hidden bg-gold text-primary-foreground py-4 text-xs uppercase tracking-[0.3em] font-medium hover:bg-gold-light transition-colors"
+      >
+        <span className="relative z-10">
+          {isSubmitting ? "Sending..." : (submitLabel ?? "Reserve My Chauffeur")}
+        </span>
+        <span className="absolute inset-0 shimmer opacity-60" />
+      </button>
       <p className="mt-4 text-center text-xs text-muted-foreground">
-        Instant confirmation • 24/7 concierge • Free cancellation up to 12h
+        Instant confirmation ï¿½ 24/7 concierge ï¿½ Free cancellation up to 12h
       </p>
     </form>
   );
