@@ -334,15 +334,17 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
         <span className="relative z-10">{isSubmitting ? "Sending..." : (submitLabel ?? "Reserve My Chauffeur")}</span>
         <span className="absolute inset-0 shimmer opacity-60" />
       </button>
-      <button
-        className="mt-8 group relative w-full overflow-hidden bg-[#25D366] hover:bg-[#1ebe5d] text-white py-4 text-xs uppercase tracking-[0.3em] font-medium transition-all duration-300 shadow-lg hover:shadow-green-500/30"
-
+      <a
+        href="https://wa.me/17134085577"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 group relative w-full overflow-hidden bg-[#25D366] hover:bg-[#1ebe5d] text-white py-4 text-xs uppercase tracking-[0.3em] font-medium transition-all duration-300 shadow-lg hover:shadow-green-500/30 flex items-center justify-center"
       >
-        <a href="https://wa.me/713-408-5577" target="_blank">
+        <span className="absolute inset-0 shimmer opacity-60 pointer-events-none" />
+        <span className="relative z-10">
           Chat on WhatsApp
-        </a>      
-          <span className="absolute inset-0 shimmer opacity-60" />
-      </button>
+        </span>
+      </a>
       <p className="mt-4 text-center text-xs text-muted-foreground">
         Instant confirmation • 24/7 concierge • Free cancellation up to 12h
       </p>
