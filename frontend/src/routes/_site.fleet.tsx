@@ -12,9 +12,9 @@ export const Route = createFileRoute("/_site/fleet")({
 
 const fleet = [
   // { img: sedan, name: "Luxury Sedan", model: "Mercedes-Benz S-Class", pax: 3, lug: 3, desc: "The pinnacle of executive comfort. Whisper-quiet, beautifully appointed, and effortlessly powerful." },
-  { img: suv, name: "Executive Yukon XL", model: "Cadillac Escalade", pax: 6, lug: 6, desc: "Commanding presence with first-class space. Perfect for VIPs, families and executives on the move." },
-  { img: stretch, name: "Stretch Limousine", model: "Chrysler 300 Stretch", pax: 10, lug: 4, desc: "Iconic glamour with bar, mood lighting and premium audio. The unforgettable arrival." },
-  { img: sprinter, name: "Luxury Sprinter", model: "Mercedes-Benz Sprinter", pax: 14, lug: 14, desc: "Boardroom-on-wheels with reclining captain's chairs and conference seating for groups and roadshows." },
+  { img: suv, name: "Executive Yukon XL", model: "GMC Yukon XL or Similar", pax: 6, lug: 6, desc: "Commanding presence with first-class space. Perfect for VIPs, families and executives on the move." },
+  { img: stretch, name: "Stretch Limousine", model: "Chrysler 300 Stretch or Similar", pax: 10, lug: 4, desc: "Iconic glamour with bar, mood lighting and premium audio. The unforgettable arrival." },
+  { img: sprinter, name: "Luxury Sprinter", model: "Mercedes-Benz Sprinter or Similar", pax: 14, lug: 14, desc: "Boardroom-on-wheels with reclining captain's chairs and conference seating for groups and roadshows." },
 ];
 
 function Fleet() {

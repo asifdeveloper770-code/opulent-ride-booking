@@ -27,8 +27,8 @@ const services = [
 const fleet = [
   { img: suv, name: "Executive SUV", pax: "1–6 Passengers", model: "GMC Yukon XL or Similar" },
   // { img: sedan, name: "Luxury Sedan", pax: "1–3 Passengers", model: "Mercedes-Benz S-Class" },
-  { img: stretch, name: "Stretch Limousine", pax: "1–10 Passengers", model: "Chrysler 300 Stretch" },
-  { img: sprinter, name: "Luxury Sprinter", pax: "1–14 Passengers", model: "Mercedes Sprinter" },
+  { img: stretch, name: "Stretch Limousine", pax: "1–10 Passengers", model: "Chrysler 300 Stretch or Similar" },
+  { img: sprinter, name: "Luxury Sprinter", pax: "1–14 Passengers", model: "Mercedes Sprinter or Similar" },
 ];
 
 const testimonials = [
