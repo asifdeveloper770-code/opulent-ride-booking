@@ -295,7 +295,7 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
           value={data.phone}
           error={errors.phone}
           type="tel"
-          placeholder="+1 (555) 123-4567"
+          placeholder="+1 (713) 408-5577"
         >
           <span className="inline-flex items-center gap-2"><Phone className="size-3.5" /> Phone</span>
         </BookingField>

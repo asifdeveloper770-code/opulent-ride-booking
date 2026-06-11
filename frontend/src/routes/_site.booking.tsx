@@ -36,7 +36,7 @@ function Booking() {
             <div className="p-6 border border-gold/50 bg-gold/5">
               <h3 className="font-display text-xl text-gold">Prefer to call?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Our concierge team is standing by 24/7.</p>
-              <a href="tel:+15551234567" className="mt-4 inline-block text-xl font-display">+1 (555) 123-4567</a>
+              <a href="tel:+17134085577" className="mt-4 inline-block text-xl font-display">+1 (713) 408-5577</a>
             </div>
           </aside>
         </div>
