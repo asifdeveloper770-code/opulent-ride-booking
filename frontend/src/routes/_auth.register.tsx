@@ -13,7 +13,6 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsSubmitting(true);

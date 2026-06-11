@@ -59,7 +59,7 @@ function Contact() {
         <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2 space-y-6">
             {[
-              { i: Phone, t: "Phone", v: " +1 (713) 408-5577", h: "tel:+15551234567" },
+              { i: Phone, t: "Phone", v: " +1 (713) 408-5577", h: "tel:+17134085577" },
               { i: Mail, t: "Email", v: "booking@saylimousine.com", h: "mailto:booking@saylimousine.com" },
               // { i: MapPin, t: "Headquarters", v: "1240 Madison Ave, New York, NY 10128" },
               { i: Clock, t: "Hours", v: "24 Hours / 7 Days a Week" },

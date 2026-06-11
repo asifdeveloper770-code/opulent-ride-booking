@@ -245,7 +245,7 @@ function Home() {
           <p className="mt-6 text-muted-foreground">Reserve in under 60 seconds. Concierge available 24/7 by phone.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link to="/booking" className="bg-gold text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors rounded-lg">Book Online</Link>
-            <a href="tel:+15551234567" className="border border-gold/60 px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 transition-all rounded-lg">Call +1 (555) 123-4567</a>
+            <a href="tel:+17134085577" className="border border-gold/60 px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 transition-all rounded-lg">Call +1 (713) 408-5577</a>
           </div>
         </div>
       </section>

@@ -77,8 +77,8 @@ export function Footer() {
         <div>
           <h4 className="text-sm uppercase tracking-[0.25em] text-gold mb-5">Contact</h4>
           <ul className="space-y-4 text-sm text-muted-foreground">
-            <li className="flex gap-3"><Phone className="size-4 text-gold mt-0.5" /> +1 (555) 123-4567</li>
-            <li className="flex gap-3"><Mail className="size-4 text-gold mt-0.5" /> bookings@saylimousine.com</li>
+            <li className="flex gap-3"><Phone className="size-4 text-gold mt-0.5" /> +1 (713) 408-5577</li>
+            <li className="flex gap-3"><Mail className="size-4 text-gold mt-0.5" /> booking@saylimousine.com</li>
             {/* <li className="flex gap-3"><MapPin className="size-4 text-gold mt-0.5" /> 1240 Madison Ave, New York, NY</li> */}
           </ul>
         </div>
