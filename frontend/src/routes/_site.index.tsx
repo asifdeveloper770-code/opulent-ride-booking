@@ -139,7 +139,6 @@ function Home() {
                 <h3 className="mt-5 text-xl font-display relative">{s.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed relative">{s.desc}</p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-gold relative">
-                  Learn More <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
             ))}
