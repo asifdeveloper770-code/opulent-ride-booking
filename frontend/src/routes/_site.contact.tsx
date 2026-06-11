@@ -92,7 +92,7 @@ function Contact() {
                 {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
               </div>
             </div>
-            <button disabled={isSubmitting} className="mt-8 w-full bg-gold text-primary-foreground py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors">
+            <button disabled={isSubmitting} className="mt-8 w-full rounded-lg bg-gold text-primary-foreground py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors">
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>

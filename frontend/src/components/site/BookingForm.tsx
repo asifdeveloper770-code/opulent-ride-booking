@@ -329,7 +329,7 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-8 group relative w-full overflow-hidden bg-gold text-primary-foreground py-4 text-xs uppercase tracking-[0.3em] font-medium hover:bg-gold-light transition-colors"
+        className="mt-8 group relative w-full rounded-lg overflow-hidden bg-gold text-primary-foreground py-4 text-xs uppercase tracking-[0.3em] font-medium hover:bg-gold-light transition-colors"
       >
         <span className="relative z-10">{isSubmitting ? "Sending..." : (submitLabel ?? "Reserve My Chauffeur")}</span>
         <span className="absolute inset-0 shimmer opacity-60" />
@@ -338,7 +338,7 @@ export function BookingForm({ compact = false, initialValues, submitLabel, succe
         href="https://wa.me/17134085577"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 group relative w-full overflow-hidden bg-[#25D366] hover:bg-[#1ebe5d] text-white py-4 text-xs uppercase tracking-[0.3em] font-medium transition-all duration-300 shadow-lg hover:shadow-green-500/30 flex items-center justify-center"
+        className="mt-8 group relative w-full rounded-lg overflow-hidden bg-[#25D366] hover:bg-[#1ebe5d] text-white py-4 text-xs uppercase tracking-[0.3em] font-medium transition-all duration-300 shadow-lg hover:shadow-green-500/30 flex items-center justify-center"
       >
         <span className="absolute inset-0 shimmer opacity-60 pointer-events-none" />
         <span className="relative z-10">

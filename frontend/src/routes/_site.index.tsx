@@ -26,7 +26,7 @@ const services = [
 
 const fleet = [
   { img: suv, name: "Executive SUV", pax: "1–6 Passengers", model: "Cadillac GMC Yukon XL" },
-  { img: sedan, name: "Luxury Sedan", pax: "1–3 Passengers", model: "Mercedes-Benz S-Class" },
+  // { img: sedan, name: "Luxury Sedan", pax: "1–3 Passengers", model: "Mercedes-Benz S-Class" },
   { img: stretch, name: "Stretch Limousine", pax: "1–10 Passengers", model: "Chrysler 300 Stretch" },
   { img: sprinter, name: "Luxury Sprinter", pax: "1–14 Passengers", model: "Mercedes Sprinter" },
 ];
@@ -77,10 +77,10 @@ function Home() {
                 SAY Limousine offers an unrivaled chauffeur experience — impeccable vehicles, world-class drivers, and the discretion you expect from a true luxury service.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link to="/booking" className="group inline-flex items-center gap-3 bg-gold text-primary-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors">
+                <Link to="/booking" className="group inline-flex items-center gap-3 bg-gold rounded-lg text-primary-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors">
                   Reserve Now <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/fleet" className="group inline-flex items-center gap-3 border border-gold/60 text-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 hover:border-gold transition-all">
+                <Link to="/fleet" className="group inline-flex items-center rounded-lg gap-3 border border-gold/60 text-foreground px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 hover:border-gold transition-all">
                   View Our Fleet
                 </Link>
               </div>
@@ -156,7 +156,7 @@ function Home() {
               View All Vehicles <ArrowRight className="size-4" />
             </Link>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {fleet.map((v) => (
               <div key={v.name} className="group relative overflow-hidden border border-border bg-background">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -204,7 +204,7 @@ function Home() {
                 </li>
               ))}
             </ul>
-            <Link to="/about" className="mt-10 inline-flex items-center gap-3 border border-gold/60 px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 transition-all">
+            <Link to="/about" className="mt-10 inline-flex items-center rounded-lg gap-3 border border-gold/60 px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 transition-all">
               Our Story <ArrowRight className="size-4" />
             </Link>
           </div>
@@ -244,8 +244,8 @@ function Home() {
           <h2 className="mt-6 text-5xl md:text-6xl font-display">Your Chauffeur <span className="font-script gradient-gold-text">Awaits</span></h2>
           <p className="mt-6 text-muted-foreground">Reserve in under 60 seconds. Concierge available 24/7 by phone.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/booking" className="bg-gold text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors">Book Online</Link>
-            <a href="tel:+15551234567" className="border border-gold/60 px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 transition-all">Call +1 (555) 123-4567</a>
+            <Link to="/booking" className="bg-gold text-primary-foreground px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold-light transition-colors rounded-lg">Book Online</Link>
+            <a href="tel:+15551234567" className="border border-gold/60 px-10 py-4 text-xs uppercase tracking-[0.3em] hover:bg-gold/10 transition-all rounded-lg">Call +1 (555) 123-4567</a>
           </div>
         </div>
       </section>

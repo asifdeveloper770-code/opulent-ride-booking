@@ -18,7 +18,7 @@ function About() {
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <img src={interior} alt="Luxury interior" loading="lazy" className="w-full aspect-[4/5] object-cover border border-border" />
+          <img src={interior} alt="Luxury interior" loading="lazy" className="w-full rounded-lg aspect-[4/5] object-cover border border-border" />
           <div>
             <h2 className="text-4xl md:text-5xl font-display leading-tight">Where Every Ride <span className="font-script gradient-gold-text">Tells A Story</span></h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -64,7 +64,7 @@ function About() {
       </section>
 
       <section className="relative py-32">
-        <img src={hero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <img src={hero} alt="" className="absolute  inset-0 w-full h-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-background/70" />
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           <span className="divider-gold">The Promise</span>

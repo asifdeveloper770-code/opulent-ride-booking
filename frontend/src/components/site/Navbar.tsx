@@ -64,7 +64,7 @@ export function Navbar() {
           </a>
           <Link
             to="/booking"
-            className="relative overflow-hidden inline-flex items-center justify-center px-5 py-2.5 text-xs uppercase tracking-[0.22em] text-primary-foreground bg-gold hover:bg-gold-light transition-colors"
+            className="relative overflow-hidden inline-flex items-center justify-center px-5 py-2.5 text-xs uppercase tracking-[0.22em] text-primary-foreground bg-gold hover:bg-gold-light transition-colors rounded-lg"
           >
             Book Now
           </Link>
@@ -76,14 +76,14 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
+        <div className="lg:hidden border-t border-border  bg-background/95 backdrop-blur-md">
           <nav className="flex flex-col px-6 py-4 gap-3">
             {nav.map((item) => (
-              <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="text-sm uppercase tracking-widest text-foreground/85 hover:text-gold py-2">
+              <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="text-sm  uppercase tracking-widest text-foreground/85 hover:text-gold py-2">
                 {item.label}
               </Link>
             ))}
-            <Link to="/booking" onClick={() => setOpen(false)} className="mt-2 inline-flex justify-center bg-gold text-primary-foreground py-3 text-xs uppercase tracking-widest">
+            <Link to="/booking" onClick={() => setOpen(false)} className="mt-2  inline-flex justify-center bg-gold text-primary-foreground py-3 text-xs uppercase tracking-widest">
               Book Now
             </Link>
           </nav>
