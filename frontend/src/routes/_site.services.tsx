@@ -13,7 +13,7 @@ const services = [
   { icon: GraduationCap, title: "Proms & Graduations", desc: "Parent-approved, fully insured, chaperone-friendly luxury transport for memorable milestones." },
   { icon: Sparkles, title: "Special Events & Galas", desc: "Concerts, premieres, anniversaries — arrive at the red carpet ready to be photographed." },
   { icon: Crown, title: "VIP Hourly Charter", desc: "Your personal chauffeur, on standby. Multiple stops, full discretion, billed by the hour." },
-  { icon: Wine, title: "Wine Tours & Night Out", desc: "Enjoy the evening — we'll handle the navigation, parking and the safe ride home." },
+  { icon: Wine, title: "Night Out", desc: "Enjoy the evening — we'll handle the navigation, parking and the safe ride home." },
   { icon: Building2, title: "Conventions & Roadshows", desc: "Group logistics with Sprinters and sedans, dispatch coordinated for large delegations." },
 ];
 
